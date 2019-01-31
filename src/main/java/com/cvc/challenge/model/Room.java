@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -40,4 +41,8 @@ public class Room {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "price", referencedColumnName = "id")
     private Price price;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "hotel")
+    private Hotel hotel;
 }
