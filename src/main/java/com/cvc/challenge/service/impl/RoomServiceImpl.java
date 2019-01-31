@@ -4,12 +4,18 @@ import javax.validation.Valid;
 
 import com.cvc.challenge.dto.RoomDTO;
 import com.cvc.challenge.dto.custom.RoomNoIdDTO;
+import com.cvc.challenge.model.Room;
+import com.cvc.challenge.repository.RoomRepository;
 import com.cvc.challenge.service.RoomService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
-public class RoomServiceImpl implements RoomService {
+public class RoomServiceImpl extends GenericServiceImpl<Room, Long> implements RoomService {
+
+    @Autowired
+    private RoomRepository repository;
 
     @Override
     public RoomDTO create(RoomNoIdDTO room) {

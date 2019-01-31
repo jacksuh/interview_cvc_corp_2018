@@ -4,12 +4,18 @@ import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
 import com.cvc.challenge.dto.custom.HotelNoIdDTO;
+import com.cvc.challenge.model.Hotel;
+import com.cvc.challenge.repository.HotelRepository;
 import com.cvc.challenge.service.HotelService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
-public class HotelServiceImpl implements HotelService {
+public class HotelServiceImpl extends GenericServiceImpl<Hotel, Long> implements HotelService {
+
+    @Autowired
+    private HotelRepository repository;
 
     @Override
     public HotelDTO create(HotelNoIdDTO hotel) {

@@ -25,5 +25,4 @@ public interface CityService {
 
     public Page<CityDTO> find(CityDTO city, Integer pageNumber, Integer pageSize, Direction direction, String orderBy);
 
-
 }
