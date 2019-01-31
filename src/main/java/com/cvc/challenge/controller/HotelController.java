@@ -1,8 +1,11 @@
 package com.cvc.challenge.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
+import com.cvc.challenge.dto.custom.HotelApiDTO;
 import com.cvc.challenge.dto.custom.HotelNoIdDTO;
 import com.cvc.challenge.service.HotelService;
 
@@ -31,6 +34,7 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping("/hotel")
 public class HotelController {
+    
     private final HotelService service;
 
     @Autowired
@@ -152,5 +156,18 @@ public class HotelController {
             @RequestParam(value = "Direction", defaultValue = "ASC", required = true) Direction direction,
             @RequestParam(value = "Ordered By", defaultValue = "id", required = true) String orderBy) {
         return (service.find(hotel, pageNumber, pageSize, direction, orderBy));
+    }
+
+    /**
+     * Get a List of Hotels from partner
+     * 
+     * @param cityId - Unique Identifier of a Hotel
+     * @return A List of Hotels from partner
+     * 
+     */
+    @ApiOperation(value = "list hotels")
+    @RequestMapping(value = "/api/list/city/{city_id}", method = RequestMethod.GET)
+    public List<HotelApiDTO> listApi(@ApiParam(value = "city Id", required = true) @PathVariable Long city_id) {
+        return (service.listApi(city_id));
     }
 }
