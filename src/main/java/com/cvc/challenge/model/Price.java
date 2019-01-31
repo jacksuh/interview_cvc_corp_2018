@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.cvc.challenge.enums.PriceType;
@@ -34,7 +36,8 @@ public class Price {
     @Column(name = "price_typ")
     private PriceType priceType;
 
-    @Column(name = "child")
-    private Double child;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "price")
+    private Price price;
     
 }

@@ -21,6 +21,6 @@ public class PriceDTO {
 
     private PriceType priceType;
 
-    private Double child;
+    private Double price;
     
 }

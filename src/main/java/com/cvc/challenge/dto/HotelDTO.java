@@ -1,7 +1,5 @@
 package com.cvc.challenge.dto;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,7 +20,5 @@ public class HotelDTO {
     private String name;
 
     private CityDTO city;
-    
-    private List<RoomDTO> rooms;
     
 }

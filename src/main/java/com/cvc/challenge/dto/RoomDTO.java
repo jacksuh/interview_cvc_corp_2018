@@ -21,5 +21,5 @@ public class RoomDTO {
 
     private Category category;
 
-    private PriceDTO price;
+    private HotelDTO hotel;
 }
