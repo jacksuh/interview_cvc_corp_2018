@@ -11,7 +11,9 @@ import com.cvc.challenge.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
 
+@Service("roomsService")
 public class RoomServiceImpl extends GenericServiceImpl<Room, Long> implements RoomService {
 
     @Autowired

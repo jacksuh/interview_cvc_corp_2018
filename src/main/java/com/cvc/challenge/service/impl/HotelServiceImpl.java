@@ -11,7 +11,9 @@ import com.cvc.challenge.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
 
+@Service("hotelService")
 public class HotelServiceImpl extends GenericServiceImpl<Hotel, Long> implements HotelService {
 
     @Autowired

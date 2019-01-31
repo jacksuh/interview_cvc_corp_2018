@@ -11,7 +11,9 @@ import com.cvc.challenge.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
 
+@Service("priceService")
 public class PriceServiceImpl extends GenericServiceImpl<Price, Long> implements PriceService {
 
     @Autowired
