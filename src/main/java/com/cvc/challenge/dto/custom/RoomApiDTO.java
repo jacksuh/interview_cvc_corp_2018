@@ -1,7 +1,5 @@
 package com.cvc.challenge.dto.custom;
 
-import com.cvc.challenge.enums.Category;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,7 +17,7 @@ public class RoomApiDTO {
 
     private Long roomID;
 
-    private Category categoryName;
+    private String categoryName;
 
     private PriceApiDTO price;
 

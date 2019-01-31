@@ -1,13 +1,10 @@
 package com.cvc.challenge.service.impl;
 
 import java.lang.reflect.Type;
-import java.util.List;
 
 import javax.validation.Valid;
 
-import com.cvc.challenge.api.HotelApi;
 import com.cvc.challenge.dto.HotelDTO;
-import com.cvc.challenge.dto.custom.HotelApiDTO;
 import com.cvc.challenge.dto.custom.HotelNoIdDTO;
 import com.cvc.challenge.model.Hotel;
 import com.cvc.challenge.repository.HotelRepository;
@@ -33,8 +30,6 @@ public class HotelServiceImpl extends GenericServiceImpl<Hotel, Long> implements
 
     @Autowired
     private HotelRepository repository;
-
-    private final HotelApi api;
 
     /** MODEL MAPPER */
     private final ModelMapper mapper = new ModelMapper();
@@ -91,13 +86,6 @@ public class HotelServiceImpl extends GenericServiceImpl<Hotel, Long> implements
         Example<Hotel> query = Example.of(mapper.map(hotel, Hotel.class), matcher);
         return (mapper.map(repository.findAll(query, pagination), pageableTypeHotelDTO));
     }
-
-    @Override
-    public List<HotelApiDTO> listApi(Long cityId) {
-        return api.getHotelsByCity(cityId);
-        // return null;
-    }
-
 
 
 }

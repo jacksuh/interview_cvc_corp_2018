@@ -15,7 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class PriceApiDTO{
 
-    private Double adutl;
+    private Double adult;
 
     private Double child;
 }

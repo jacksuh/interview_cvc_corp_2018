@@ -1,11 +1,8 @@
 package com.cvc.challenge.service;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
-import com.cvc.challenge.dto.custom.HotelApiDTO;
 import com.cvc.challenge.dto.custom.HotelNoIdDTO;
 
 import org.springframework.data.domain.Page;
@@ -27,8 +24,5 @@ public interface HotelService {
             String orderBy);
 
     public Page<HotelDTO> find(HotelDTO hotel, Integer pageNumber, Integer pageSize, Direction direction, String orderBy);
-
-    public List<HotelApiDTO> listApi (Long cityId);
-
 
 }
