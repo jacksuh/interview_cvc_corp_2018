@@ -3,14 +3,14 @@ package com.cvc.challenge.service;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.PriceDTO;
-import com.cvc.challenge.dto.custom.PriceNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdPriceDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
 public interface PriceService {
 
-    public PriceDTO create(PriceNoIdDTO price);
+    public PriceDTO create(NoIdPriceDTO price);
 
     public PriceDTO read(Long id);
 

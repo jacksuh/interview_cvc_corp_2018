@@ -3,7 +3,7 @@ package com.cvc.challenge.controller;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.PriceDTO;
-import com.cvc.challenge.dto.custom.PriceNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdPriceDTO;
 import com.cvc.challenge.service.PriceService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class PriceController {
      */
     @ApiOperation(value = "Create new Price")
     @RequestMapping(method = RequestMethod.POST)
-    public PriceDTO create(@ApiParam(value = "Price", required = true) @RequestBody PriceNoIdDTO price) {
+    public PriceDTO create(@ApiParam(value = "Price", required = true) @RequestBody NoIdPriceDTO price) {
         return (service.create(price));
     }
 

@@ -3,7 +3,7 @@ package com.cvc.challenge.controller;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
-import com.cvc.challenge.dto.custom.HotelNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdHotelDTO;
 import com.cvc.challenge.service.HotelService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@ public class HotelController {
      */
     @ApiOperation(value = "Create new Hotel")
     @RequestMapping(method = RequestMethod.POST)
-    public HotelDTO create(@ApiParam(value = "Hotel", required = true) @RequestBody HotelNoIdDTO hotel) {
+    public HotelDTO create(@ApiParam(value = "Hotel", required = true) @RequestBody NoIdHotelDTO hotel) {
         return (service.create(hotel));
     }
 

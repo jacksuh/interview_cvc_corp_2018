@@ -6,13 +6,14 @@ import java.util.concurrent.TimeUnit;
 public class DateUtils {
 
     public static int diffBetweenDates(Date date1, Date date2) {
-        long diffInMillies;
-        if (date2.after(date1)) {
-            diffInMillies = Math.abs(date2.getTime() - date1.getTime());
+        long diff;
+        if (date1.after(date2)) {
+            diff = date1.getTime() - date2.getTime();
         } else {
-            diffInMillies = Math.abs(date1.getTime() - date2.getTime());
+            diff = date2.getTime() - date1.getTime();
         }
-        Long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-        return diff.intValue();
+
+        return Math.toIntExact(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+
     }
 }

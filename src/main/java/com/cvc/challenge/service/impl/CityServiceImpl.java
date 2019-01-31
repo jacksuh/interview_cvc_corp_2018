@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.CityDTO;
-import com.cvc.challenge.dto.custom.CityNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdCityDTO;
 import com.cvc.challenge.model.City;
 import com.cvc.challenge.repository.CityRepository;
 import com.cvc.challenge.service.CityService;
@@ -33,7 +33,7 @@ public class CityServiceImpl extends GenericServiceImpl<City, Long> implements C
     private final Type pageableTypeCityDTO = new TypeToken<Page<CityDTO>>() {}.getType(); // getPage Type for CityDTO
 
     @Override
-    public CityDTO create(CityNoIdDTO city) {
+    public CityDTO create(NoIdCityDTO city) {
         City newCity = mapper.map(city, City.class);
         return mapper.map(repository.save(newCity), CityDTO.class);
     }

@@ -1,6 +1,6 @@
 package com.cvc.challenge.dto.custom;
 
-import java.util.List;
+import com.cvc.challenge.enums.PriceType;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,16 +15,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class HotelApiDTO {
+public class NoIdPriceDTO {
 
-    private Long id;
+    private PriceType priceType;
 
-    private String name;
-
-    private Long cityCode;
-
-    private String cityName;
-
-    private List<RoomApiDTO> rooms;
+    private Double price;
 
 }

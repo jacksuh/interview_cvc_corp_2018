@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.PriceDTO;
-import com.cvc.challenge.dto.custom.PriceNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdPriceDTO;
 import com.cvc.challenge.model.Price;
 import com.cvc.challenge.repository.PriceRepository;
 import com.cvc.challenge.service.PriceService;
@@ -33,7 +33,7 @@ public class PriceServiceImpl extends GenericServiceImpl<Price, Long> implements
     private final Type pageableTypePriceDTO = new TypeToken<Page<PriceDTO>>() {}.getType(); // getPage Type for PriceDTO
 
     @Override
-    public PriceDTO create(PriceNoIdDTO price) {
+    public PriceDTO create(NoIdPriceDTO price) {
         Price newPrice = mapper.map(price, Price.class);
         return mapper.map(repository.save(newPrice), PriceDTO.class);
     }

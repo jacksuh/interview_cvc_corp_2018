@@ -1,7 +1,5 @@
 package com.cvc.challenge.dto.custom;
 
-import com.cvc.challenge.dto.CityDTO;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,10 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class HotelNoIdDTO {
+public class NoIdCityDTO {
 
     private String name;
-
-    private CityDTO city;
-    
 }

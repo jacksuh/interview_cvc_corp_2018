@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.RoomDTO;
-import com.cvc.challenge.dto.custom.RoomNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdRoomDTO;
 import com.cvc.challenge.model.Room;
 import com.cvc.challenge.repository.RoomRepository;
 import com.cvc.challenge.service.RoomService;
@@ -33,7 +33,7 @@ public class RoomServiceImpl extends GenericServiceImpl<Room, Long> implements R
     private final Type pageableTypeRoomDTO = new TypeToken<Page<RoomDTO>>() {}.getType(); // getPage Type for RoomDTO
 
     @Override
-    public RoomDTO create(RoomNoIdDTO room) {
+    public RoomDTO create(NoIdRoomDTO room) {
         Room newRoom = mapper.map(room, Room.class);
         return mapper.map(repository.save(newRoom), RoomDTO.class);
     }

@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
-import com.cvc.challenge.dto.custom.HotelNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdHotelDTO;
 import com.cvc.challenge.model.Hotel;
 import com.cvc.challenge.repository.HotelRepository;
 import com.cvc.challenge.service.HotelService;
@@ -36,7 +36,7 @@ public class HotelServiceImpl extends GenericServiceImpl<Hotel, Long> implements
     private final Type pageableTypeHotelDTO = new TypeToken<Page<HotelDTO>>() {}.getType(); // getPage Type for HotelDTO
 
     @Override
-    public HotelDTO create(HotelNoIdDTO hotel) {
+    public HotelDTO create(NoIdHotelDTO hotel) {
         Hotel newHotel = mapper.map(hotel, Hotel.class);
         return mapper.map(repository.save(newHotel), HotelDTO.class);
     }

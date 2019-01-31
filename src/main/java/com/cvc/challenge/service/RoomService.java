@@ -3,14 +3,14 @@ package com.cvc.challenge.service;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.RoomDTO;
-import com.cvc.challenge.dto.custom.RoomNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdRoomDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
 public interface RoomService {
 
-    public RoomDTO create(RoomNoIdDTO room);
+    public RoomDTO create(NoIdRoomDTO room);
 
     public RoomDTO read(Long id);
 

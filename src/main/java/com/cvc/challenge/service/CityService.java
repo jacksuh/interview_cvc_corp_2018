@@ -3,14 +3,14 @@ package com.cvc.challenge.service;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.CityDTO;
-import com.cvc.challenge.dto.custom.CityNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdCityDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
 public interface CityService {
 
-    public CityDTO create(CityNoIdDTO city);
+    public CityDTO create(NoIdCityDTO city);
 
     public CityDTO read(Long id);
 

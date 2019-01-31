@@ -3,7 +3,7 @@ package com.cvc.challenge.controller;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.RoomDTO;
-import com.cvc.challenge.dto.custom.RoomNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdRoomDTO;
 import com.cvc.challenge.service.RoomService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class RoomController {
      */
     @ApiOperation(value = "Create new Room")
     @RequestMapping(method = RequestMethod.POST)
-    public RoomDTO create(@ApiParam(value = "Room", required = true) @RequestBody RoomNoIdDTO room) {
+    public RoomDTO create(@ApiParam(value = "Room", required = true) @RequestBody NoIdRoomDTO room) {
         return (service.create(room));
     }
 

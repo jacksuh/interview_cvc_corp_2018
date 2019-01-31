@@ -13,6 +13,14 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Swagger Custom config
+ * Use this class to customize Swagger interface
+ * 
+ * @author Rodrigo Dantas - rodrigodantas.91@gmail.com
+ * @since 2019.01.30
+ * 
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport {

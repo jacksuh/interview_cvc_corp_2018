@@ -15,6 +15,13 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+/**
+ * Resources exposure and CORS filtering
+ * 
+ * @author Rodrigo Dantas - rodrigodantas.91@gmail.com
+ * @since 2019.01.30
+ * 
+ */
 @Configuration
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {

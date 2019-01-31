@@ -3,7 +3,7 @@ package com.cvc.challenge.controller;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.CityDTO;
-import com.cvc.challenge.dto.custom.CityNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdCityDTO;
 import com.cvc.challenge.service.CityService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class CityController {
      */
     @ApiOperation(value = "Create new City")
     @RequestMapping(method = RequestMethod.POST)
-    public CityDTO create(@ApiParam(value = "City", required = true) @RequestBody CityNoIdDTO city) {
+    public CityDTO create(@ApiParam(value = "City", required = true) @RequestBody NoIdCityDTO city) {
         return (service.create(city));
     }
 

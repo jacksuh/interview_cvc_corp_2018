@@ -1,6 +1,8 @@
 package com.cvc.challenge.dto.custom;
 
-import com.cvc.challenge.enums.PriceType;
+import com.cvc.challenge.dto.HotelDTO;
+import com.cvc.challenge.dto.PriceDTO;
+import com.cvc.challenge.enums.Category;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,10 +17,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class PriceNoIdDTO {
+public class NoIdRoomDTO {
 
-    private PriceType priceType;
+    private Category category;
 
-    private Double price;
+    private HotelDTO hotel;
 
+    private PriceDTO price;
 }

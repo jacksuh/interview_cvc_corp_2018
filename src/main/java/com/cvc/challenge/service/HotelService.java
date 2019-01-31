@@ -3,14 +3,14 @@ package com.cvc.challenge.service;
 import javax.validation.Valid;
 
 import com.cvc.challenge.dto.HotelDTO;
-import com.cvc.challenge.dto.custom.HotelNoIdDTO;
+import com.cvc.challenge.dto.custom.NoIdHotelDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
 public interface HotelService {
 
-    public HotelDTO create(HotelNoIdDTO hotel);
+    public HotelDTO create(NoIdHotelDTO hotel);
 
     public HotelDTO read(Long id);
 
