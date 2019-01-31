@@ -1,5 +1,16 @@
 version: "3.4"
 services:
+  maven:
+    image: maven:3-jdk-8
+    container_name: cvc-challeng_spring
+    ports: 
+      - 8080:8080
+    volumes:
+      - "./:/app"
+    working_dir: /app
+    command: mvn spring-boot:run
+    depends_on: 
+      - mysql
   mysql:
     image: mysql:5.6
     ports:
