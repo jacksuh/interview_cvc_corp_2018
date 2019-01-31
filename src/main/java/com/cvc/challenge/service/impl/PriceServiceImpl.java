@@ -4,12 +4,18 @@ import javax.validation.Valid;
 
 import com.cvc.challenge.dto.PriceDTO;
 import com.cvc.challenge.dto.custom.PriceNoIdDTO;
+import com.cvc.challenge.model.Price;
+import com.cvc.challenge.repository.PriceRepository;
 import com.cvc.challenge.service.PriceService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort.Direction;
 
-public class PriceServiceImpl implements PriceService {
+public class PriceServiceImpl extends GenericServiceImpl<Price, Long> implements PriceService {
+
+    @Autowired
+    private PriceRepository repository;
 
     @Override
     public PriceDTO create(PriceNoIdDTO price) {
@@ -47,6 +53,5 @@ public class PriceServiceImpl implements PriceService {
             String orderBy) {
         return null;
     }
-
 
 }
