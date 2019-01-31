@@ -68,7 +68,7 @@ public class CityController {
      * Updates a single city on Database
      * 
      * @param city - A Single City Object the id of existing Object and new data
-     *              tobe applied
+     *             tobe applied
      * @return A Single City Object that was just updated
      * 
      */
@@ -113,7 +113,7 @@ public class CityController {
     /**
      * Search all Citys from Database matching with <b>CONTAINING</b> filters
      * 
-     * @param city      - Object filled with attributes to be used as filters
+     * @param city       - Object filled with attributes to be used as filters
      * @param pageNumber - Page that will be shown on Response
      * @param pageSize   - Number of items to display on requested Page
      * @param direction  - Order of items ASC / DESC
@@ -135,7 +135,7 @@ public class CityController {
     /**
      * Search all Citys from Database matching with <b>EXACT</b> filters
      * 
-     * @param city      - Object filled with attributes to be used as filters
+     * @param city       - Object filled with attributes to be used as filters
      * @param pageNumber - Page that will be shown on Response
      * @param pageSize   - Number of items to display on requested Page
      * @param direction  - Order of items ASC / DESC
