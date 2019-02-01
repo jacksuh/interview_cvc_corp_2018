@@ -12,8 +12,11 @@ public interface BrokerService {
 
     public List<BrokerHotelDTO> hotelById (Long id);
 
-	public List<BrokerHotelDTO> hotelListPriceByCity(Long cityCode, Date checkIn, Date checkOut, Integer adult,
-			Integer child);
+	public List<BrokerHotelDTO> hotelListPriceByCity(Long cityCode, Date checkIn, Date checkOut, Integer adultCount,
+			Integer childCount);
+
+	public List<BrokerHotelDTO> hotelPriceById(Long hotelId, Date checkIn, Date checkOut, Integer adultCount,
+			Integer childCount);
 
 
 }

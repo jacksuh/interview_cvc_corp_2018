@@ -76,13 +76,35 @@ public class BrokerController {
      * 
      */
     @ApiOperation(value = "List of prices of all hotels based on user's data")
-    @RequestMapping(value = "/hotels/price", method = RequestMethod.GET)
+    @RequestMapping(value = "/hotel/price/all", method = RequestMethod.GET)
     public List<BrokerHotelDTO> hotelListPriceByCity(@RequestParam(value = "CityCode", required = true) Long cityCode,
             @RequestParam(value = "CheckIn", defaultValue = "01/01/1900", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date checkIn,
             @RequestParam(value = "CheckOut", defaultValue = "31/12/2900", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date checkOut,
             @RequestParam(value = "Adults", defaultValue = "0", required = true) Integer adultCount,
             @RequestParam(value = "Child", defaultValue = "0", required = true) Integer childCount) {
         return (service.hotelListPriceByCity(cityCode, checkIn, checkOut, adultCount, childCount));
+    }
+
+     /**
+     * Prices of single hotel based on user's data
+     * 
+     * @param hotelId   - Unique Identifier of a city
+     * @param checkIn    - CheckIn date
+     * @param checkOut   - CheckOut date
+     * @param adultCount - Number of Adults per reservation
+     * @param childCount - Number of Childres per reservation
+     * @return A list containing all Hotels of the city and the prices based on
+     *         client's given information
+     * 
+     */
+    @ApiOperation(value = "Prices of single hotel based on user's data")
+    @RequestMapping(value = "/hotel/price", method = RequestMethod.GET)
+    public List<BrokerHotelDTO> hotelPriceById(@RequestParam(value = "HotelId", required = true) Long hotelId,
+            @RequestParam(value = "CheckIn", defaultValue = "01/01/1900", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date checkIn,
+            @RequestParam(value = "CheckOut", defaultValue = "31/12/2900", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date checkOut,
+            @RequestParam(value = "Adults", defaultValue = "0", required = true) Integer adultCount,
+            @RequestParam(value = "Child", defaultValue = "0", required = true) Integer childCount) {
+        return (service.hotelPriceById(hotelId, checkIn, checkOut, adultCount, childCount));
     }
 
 }

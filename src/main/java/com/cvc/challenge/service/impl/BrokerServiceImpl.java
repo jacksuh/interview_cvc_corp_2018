@@ -31,8 +31,8 @@ public class BrokerServiceImpl implements BrokerService {
     }
 
     @Override
-    public List<BrokerHotelDTO> hotelListPriceByCity(Long cityCode, Date checkIn, Date checkOut, Integer adult,
-            Integer child) {
+    public List<BrokerHotelDTO> hotelListPriceByCity(Long cityCode, Date checkIn, Date checkOut, Integer adultCount,
+            Integer childCount) {
 
         int days = DateUtils.diffBetweenDates(checkIn, checkOut);
 
@@ -41,13 +41,30 @@ public class BrokerServiceImpl implements BrokerService {
         myHotels.forEach(h -> {
             h.getRooms().forEach(r -> {
                 r.getPrice()
-                        .setAdult(DoubleRounder.round(CalcUtils.stay(r.getPrice().getAdult(), days, 0.7, adult), 2));
+                        .setAdult(DoubleRounder.round(CalcUtils.stay(r.getPrice().getAdult(), days, 0.7, adultCount), 2));
                 r.getPrice()
-                        .setChild(DoubleRounder.round(CalcUtils.stay(r.getPrice().getChild(), days, 0.7, child), 2));
+                        .setChild(DoubleRounder.round(CalcUtils.stay(r.getPrice().getChild(), days, 0.7, childCount), 2));
             });
         });
 
         return myHotels;
+    }
+
+    @Override
+    public List<BrokerHotelDTO> hotelPriceById(Long hotelId, Date checkIn, Date checkOut, Integer adultCount,
+            Integer childCount) {
+
+                int days = DateUtils.diffBetweenDates(checkIn, checkOut);
+                List<BrokerHotelDTO> myHotel = api.hotelById(hotelId);
+
+                myHotel.get(0).getRooms().forEach(r -> {
+                    r.getPrice()
+                            .setAdult(DoubleRounder.round(CalcUtils.stay(r.getPrice().getAdult(), days, 0.7, adultCount), 2));
+                    r.getPrice()
+                            .setChild(DoubleRounder.round(CalcUtils.stay(r.getPrice().getChild(), days, 0.7, childCount), 2));
+                });
+
+        return myHotel;
     }
 
 }
